@@ -1,25 +1,9 @@
 <template>
+<!--<router-link class="nav-link" to="/">Inicio</router-link>-->
   <div id="nav">
-    <nav class="navbar navbar-expand-lg fixed-top bg-success">
-      <div class="container-fluid">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
+      <div class="container-fluid border-bottom pb-2">
         <a class="navbar-brand" href="#">Educación Continua | FIME</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <router-link class="nav-link" to="/">Inicio</router-link>
-            <router-link class="nav-link" to="/programas">Programas</router-link>
-          </div>
-        </div>
       </div>
     </nav>
   </div>
@@ -37,10 +21,11 @@
 
 #nav a {
   text-decoration: none;
-  color: #fff;
+  color: #01765D;
+  font-weight: 500;
 }
 
-#nav a.router-link-exact-active {
-  color: #82ebbf;
+.navbar {
+  background-color: #fff;
 }
 </style>
