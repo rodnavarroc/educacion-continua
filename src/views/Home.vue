@@ -20,7 +20,7 @@
             <ul class="pt-5">
               <li>Estudia desde casa</li>
               <li>Clases en fin de semana</li>
-              <li>Descuento para estudiantes de Licenciatura</li>
+              <li>Descuento para estudiantes de Licenciatura en FIME</li>
             </ul>
             <br />
           </p>
@@ -42,7 +42,7 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-12 col-md-4"><p class="footer-info"><center><b>Via telefónica</b><br> 81-8329-4020</center></p></div>
-                <div class="col-12 col-md-4"><p class="footer-info"><center><b>Facebook</b><br><a class="link" href="http://www.facebook.com/educont.caadi">Educación Continua y CAADI</a></center></p></div>
+                <div class="col-12 col-md-4"><p class="footer-info"><center><b>Facebook</b><br><a class="link" href="http://www.facebook.com/educont.caadi" rel="noopener" target="_blank">Educación Continua y CAADI</a></center></p></div>
                 <div class="col-12 col-md-4"><p class="footer-info"><center><b>Correo electrónico</b><br> <a class="link" href="mailto://educont.fime@uanl.mx">educont.fime@uanl.mx</a></center></p></div>
               </div>
             </div>          
@@ -62,7 +62,7 @@ export default {
 
 <style scoped>
 .mc {
-  padding-top: 12vh;
+  padding-top: 15vh;
 }
 
 .main-img {

@@ -1,8 +1,8 @@
 <template>
 <!--<router-link class="nav-link" to="/">Inicio</router-link>-->
   <div id="nav">
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
-      <div class="container-fluid border-bottom pb-2">
+    <nav class="navbar bg-light fixed-top">
+      <div class="container-fluid pb-2">
         <a class="navbar-brand" href="#">Educación Continua | FIME</a>
       </div>
     </nav>
@@ -26,6 +26,7 @@
 }
 
 .navbar {
-  background-color: #fff;
+  padding-bottom: 0;
 }
+
 </style>
