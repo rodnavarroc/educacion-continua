@@ -1,7 +1,7 @@
 <template>
   <div class="container mc">
     <div class="row justify-content-md-center">
-      <div class="col-12 col-md-8">
+      <div class="col-12 col-md-8 px-4">
         <h1 class="title">Registro al programa</h1>
         <h4 class="subtitulo">"Calidad Total y Mejora Continua"</h4>
         <br />
@@ -50,7 +50,7 @@
             required
           /><br />
 
-          <center><a href="" class="btn mt-3">Registrarse al programa</a></center>
+          <center><a href="" class="btn mt-3 mb-5">Registrarse al programa</a></center>
 
         </div>
       </div>

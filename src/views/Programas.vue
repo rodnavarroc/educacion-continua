@@ -16,12 +16,14 @@
               class="col-12 col-md-4"
               :key="item.id"
             >
-              <div class="card p-2">
-                <img :src="item.img" class="card-img-top" />
-                <div class="card-body">
-                  <h5 class="card-title">{{ item.titulo }}</h5>
+              <router-link to="/registro">
+                <div class="card p-2">
+                  <img :src="item.img" class="card-img-top" />
+                  <div class="card-body">
+                    <h5 class="card-title">{{ item.titulo }}</h5>
+                  </div>
                 </div>
-              </div>
+              </router-link>
               <br />
             </div>
           </div>
@@ -42,12 +44,14 @@
               class="col-12 col-md-4"
               :key="item.id"
             >
-              <div class="card p-2">
-                <img :src="item.img" class="card-img-top" />
-                <div class="card-body">
-                  <h5 class="card-title">{{ item.titulo }}</h5>
+              <router-link to="/registro">
+                <div class="card p-2">
+                  <img :src="item.img" class="card-img-top" />
+                  <div class="card-body">
+                    <h5 class="card-title">{{ item.titulo }}</h5>
+                  </div>
                 </div>
-              </div>
+              </router-link>
               <br />
             </div>
           </div>
@@ -153,5 +157,10 @@ export default {
 .card img {
   width: 80%;
   align-self: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 </style>
