@@ -4,15 +4,17 @@
       <div class="col-12 col-md-4 p-4">
         <h1 class="title">Administración</h1>
 
+        <form @submit.prevent="userLogin">
         <br />
-        <label for="user"><p>Usuario</p></label>
-        <input type="text" class="form-control" required />
+        <label for="user"><p>Correo electrónico</p></label>
+        <input type="email" class="form-control" v-model="user.email" required />
 
         <br />
         <label for="user"><p>Contraseña</p></label>
-        <input type="password" class="form-control" required />
+        <input type="password" class="form-control" v-model="user.password" required />
 
-        <center><a href="" class="btn w-50 mt-4">Iniciar Sesión</a></center>
+        <center><button type="submit" class="btn w-50 mt-4">Iniciar Sesión</button></center>
+        </form>
       </div>
     </div>
   </div>
@@ -49,7 +51,31 @@
 </style>
 
 <script>
+import firebase from "firebase";
+
 export default {
-  setup() {},
+  data() {
+    return {
+      user: {
+
+      }
+    };
+  },
+  setup() {
+
+  },
+  methods: {
+    userLogin() {
+        firebase
+        .auth()
+        .signInWithEmailAndPassword(this.user.email, this.user.password)
+        .then(() => {
+            this.$router.push('/administracion')
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
+    }
+  }
 };
 </script>
