@@ -3,9 +3,9 @@
     <div class="row justify-content-md-center">
       <div class="col-12 col-md-8 px-4">
         <h1 class="title">Registro al programa</h1>
-        <h4 class="subtitulo">"Calidad Total y Mejora Continua"</h4>
+        <h4 class="subtitulo">"{{ course }}"</h4>
         <br />
-        <div>
+        <form @submit.prevent="onFormSubmit">
           <label>
             <p>Nombre completo</p>
           </label>
@@ -13,6 +13,7 @@
             type="text"
             name="nombre"
             id="nombre"
+            v-model="data.nombre"
             class="form-control"
             required
           /><br />
@@ -24,6 +25,7 @@
             type="number"
             name="edad"
             id="edad"
+            v-model="data.edad"
             class="form-control"
             required
           /><br />
@@ -35,6 +37,7 @@
             type="email"
             name="email"
             id="email"
+            v-model="data.correo"
             class="form-control"
             required
           /><br />
@@ -46,13 +49,15 @@
             type="number"
             name="telefono"
             id="telefono"
+            v-model="data.telefono"
             class="form-control"
             required
           /><br />
 
-          <center><a href="" class="btn mt-3 mb-5">Registrarse al programa</a></center>
-
-        </div>
+          <button type="submit" class="btn mt-3 mb-5 w-100">
+            Registrarse al programa
+          </button>
+        </form>
       </div>
     </div>
   </div>
@@ -95,13 +100,43 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 </style>
 
 <script>
+import firebase from "firebase";
+
 export default {
-  setup() {},
+  data() {
+    return {
+      course: '',
+      data: {},
+    };
+  },
+  created() {
+    this.course = this.$route.params.course;
+    this.data.course = this.course;
+  },
+  methods: {
+    onFormSubmit(event) {
+      event.preventDefault();
+      firebase
+        .firestore()
+        .collection("registros")
+        .add(this.data)
+        .then(() => {
+          alert("Register successfully created!");
+          this.data.nombre = "";
+          this.data.edad = "";
+          this.data.correo = "";
+          this.data.telefono = "";
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
 };
 </script>

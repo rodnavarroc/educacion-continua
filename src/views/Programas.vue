@@ -16,7 +16,7 @@
               class="col-12 col-md-4"
               :key="item.id"
             >
-              <router-link to="/registro">
+              <router-link :to="{ name: 'Registro', params: { course: item.titulo } }">
                 <div class="card p-2">
                   <img :src="item.img" class="card-img-top" />
                   <div class="card-body">
@@ -44,7 +44,7 @@
               class="col-12 col-md-4"
               :key="item.id"
             >
-              <router-link to="/registro">
+              <router-link :to="{ name: 'Registro', params: { course: item.titulo } }">
                 <div class="card p-2">
                   <img :src="item.img" class="card-img-top" />
                   <div class="card-body">
