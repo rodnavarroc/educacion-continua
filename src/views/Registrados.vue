@@ -1,5 +1,30 @@
 <template>
-  <div class="container mc">test</div>
+  <div class="container mc">
+    <div class="row">
+      <div class="col-12 table-responsive">
+        <table class="table align-middle">
+          <thead>
+            <tr>
+              <th class="bg-light">Programa</th>
+              <th>Nombre</th>
+              <th>Edad</th>
+              <th>Correo</th>
+              <th>Teléfono</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="registro in Registros" :key="registro.key">
+              <td class="bg-light">{{ registro.course }}</td>
+              <td>{{ registro.nombre }}</td>
+              <td>{{ registro.edad }}</td>
+              <td>{{ registro.correo }}</td>
+              <td>{{ registro.telefono }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -43,6 +68,28 @@ export default {
       next("/login");
     }
   },
-  setup() {},
+  data() {
+    return {
+      Registros: [],
+    };
+  },
+  created() {
+    firebase
+      .firestore()
+      .collection("registros")
+      .onSnapshot((snapshotChange) => {
+        this.Registros = [];
+        snapshotChange.forEach((element) => {
+          this.Registros.push({
+            key: element.id,
+            nombre: element.data().nombre,
+            correo: element.data().correo,
+            telefono: element.data().telefono,
+            edad: element.data().edad,
+            course: element.data().course,
+          });
+        });
+      });
+  },
 };
 </script>

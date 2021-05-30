@@ -127,7 +127,7 @@ export default {
         .collection("registros")
         .add(this.data)
         .then(() => {
-          alert("Register successfully created!");
+          alert("Gracias por registrarte al programa '"+this.course+"'!");
           this.data.nombre = "";
           this.data.edad = "";
           this.data.correo = "";
